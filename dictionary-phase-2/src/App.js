@@ -1,29 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { generateSlug } from "random-word-slugs";
 import Search from './Components/Search';
+import WordContainer from './Components/WordContainer';
+import WordOfTheDay from './Components/WordOfTheDay';
+import FavoriteList from './Components/FavoriteList';
+import NavBar from './Components/NavBar';
 
 function App() {
+  const [searchWord, setSearchWord] = useState("")
+
+  function getWord(searchValue) {
+    fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${searchValue}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
+    .then(r => r.json())
+    .then(data => console.log(data))
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Search /> 
+    <div>
+      <h1>React-ionary</h1>
+      <NavBar />
+      <Search getWord={getWord} /> 
+      <WordContainer />
+      <WordOfTheDay />
+      <FavoriteList />
     </div>
   );
 }
