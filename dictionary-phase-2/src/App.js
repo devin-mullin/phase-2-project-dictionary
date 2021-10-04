@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { generateSlug } from "random-word-slugs";
+import Search from './Components/Search';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +23,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Search /> 
     </div>
   );
 }
