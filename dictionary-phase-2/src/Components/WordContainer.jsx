@@ -1,8 +1,8 @@
 import WordCard from './WordCard'
 
-function WordContainer() {
+function WordContainer({searchWord}) {
     return(
-        <WordCard />
+        <WordCard searchWord={searchWord[0]} />
     )
 }
 

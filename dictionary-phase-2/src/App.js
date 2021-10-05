@@ -13,15 +13,16 @@ function App() {
   function getWord(searchValue) {
     fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${searchValue}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
     .then(r => r.json())
-    .then(data => console.log(data))
+    .then(data => setSearchWord(data))
   }
+
 
   return (
     <div>
       <h1>React-ionary</h1>
       <NavBar />
       <Search getWord={getWord} /> 
-      <WordContainer />
+      {searchWord? <WordContainer searchWord={searchWord}/> : null}
       <WordOfTheDay />
       <FavoriteList />
     </div>

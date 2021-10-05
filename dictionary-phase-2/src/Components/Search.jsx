@@ -12,7 +12,6 @@ function Search ({getWord}) {
     function handleSubmit(e) {
         e.preventDefault()
         getWord(searchValue)
-        console.log(searchValue)
     }
     
     return(
