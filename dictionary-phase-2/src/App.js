@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { generateSlug } from "random-word-slugs";
 import Search from './Components/Search';
 import WordContainer from './Components/WordContainer';
 import WordOfTheDay from './Components/WordOfTheDay';
@@ -16,6 +15,7 @@ function App() {
     .then(data => setSearchWord(data))
   }
 
+  console.log(searchWord)
 
   return (
     <div>
