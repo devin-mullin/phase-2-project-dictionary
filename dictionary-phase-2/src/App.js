@@ -11,9 +11,14 @@ function App() {
   const [searchWord, setSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
   [
-    {hwi: 
+    { art: { 
+      artid: ''},
+      hwi: 
       {hw: '', 
-        prs: [ {mw: ''} ],},
+        prs: [ {mw: '',
+                  sound: {
+                    audio: ""
+                  }} ],},
       shortdef: [] },
   ])
 
