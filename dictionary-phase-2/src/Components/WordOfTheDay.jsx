@@ -1,25 +1,34 @@
 
-import {useEffect, useState} from 'react'
-import { generateSlug } from "random-word-slugs";
-import WordCard from './WordCard';
+// function WordOfTheDay({setRandomWord, randomWord}) {
+//     const subdirectory = randomWord.hwi.prs[0].sound.audio[0]
+//     const soundFile = randomWord.hwi.prs[0].sound.audio 
+//     const audioElement = new Audio(`https://media.merriam-webster.com/audio/prons/en/us/mp3/${subdirectory}/${soundFile}.mp3`)
 
-function WordOfTheDay() {
-    const [randomWord, setRandomWord] = useState('')
+//     let isImage = true
+//     let image
 
-    const slug = generateSlug(1)
-    // console.log('slug', slug)
+//     if(randomWord.art?.artid) {
+//      isImage = true
+//      const imageDirectory = randomWord.art.artid 
+//      image = `https://www.merriam-webster.com/assets/mw/static/art/dict/${imageDirectory}.gif`
+//     } else {
+//         isImage = false
+//     }
 
-    useEffect(() => {
-        fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${slug}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
-        .then(r => r.json())
-        .then(data => setRandomWord(data))
-    }, [])
+//     const playAudio = () => {
+//         audioElement.play()
+//     }
+ 
+//      return(
+//          <div>
+//              <h2>{randomWord.hwi.hw}</h2>
+//              <h3>{randomWord.hwi.prs[0].mw}</h3>
+//              <button onClick={playAudio}>Say Word</button>
+//              {randomWord.shortdef.map((word, index) => <p key={index}>{word}</p>)}
+//              {isImage ? <img src={image}/> : null}
+             
+//          </div>
+//      )
+// }
 
-    return(
-        <div>
-          <WordCard searchWord={randomWord}/>
-        </div>
-    )
-}
-
-export default WordOfTheDay
+// export default WordOfTheDay

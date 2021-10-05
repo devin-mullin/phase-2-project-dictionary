@@ -5,10 +5,22 @@ import WordContainer from './Components/WordContainer';
 import WordOfTheDay from './Components/WordOfTheDay';
 import FavoriteList from './Components/FavoriteList';
 import NavBar from './Components/NavBar';
+import { generateSlug } from "random-word-slugs";
 
 function App() {
   const [searchWord, setSearchWord] = useState("")
+  const [randomWord, setRandomWord] = useState('')
+  const slug = generateSlug(1)
 
+  useEffect(() => {
+    fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${slug}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
+    .then(r => r.json())
+    .then(data => {
+      debugger;
+      console.log(data)
+    })
+  }, [])
+  
   function getWord(searchValue) {
     fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${searchValue}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
     .then(r => r.json())
@@ -23,7 +35,7 @@ function App() {
       <NavBar />
       <Search getWord={getWord} /> 
       {searchWord? <WordContainer searchWord={searchWord}/> : null}
-      <WordOfTheDay />
+      <WordOfTheDay randomWord={randomWord} setRandomWord={setRandomWord} />
       <FavoriteList />
     </div>
   );
