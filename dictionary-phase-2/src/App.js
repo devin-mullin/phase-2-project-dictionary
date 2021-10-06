@@ -6,8 +6,10 @@ import WordOfTheDay from './Components/WordOfTheDay';
 import FavoriteList from './Components/FavoriteList';
 import NavBar from './Components/NavBar';
 import { generateSlug } from "random-word-slugs";
+import NewUserForm from './Components/NewUserForm';
 
 function App() {
+  const [showForm, setShowForm] = useState(false)
   const [searchWord, setSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
   [
@@ -49,7 +51,8 @@ function App() {
   return (
     <div>
       <h1>React-ionary</h1>
-      <NavBar />
+      <NavBar setShowForm={setShowForm} />
+      {showForm ? <NewUserForm /> : null}
       <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} /> 
       {searchWord? <WordContainer searchWord={searchWord}/> : null}
       <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />

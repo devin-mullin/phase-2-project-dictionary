@@ -1,7 +1,9 @@
-import NewUserForm from "./NewUserForm"
+import NewUserForm from './NewUserForm'
 import styled from 'styled-components'
+import {useState} from 'react'
 
-function NavBar() {
+function NavBar({setShowForm}) {
+
     return(
         <Header>
             <form>
@@ -9,8 +11,8 @@ function NavBar() {
                 <input type="text" name="password" placeholder="Password" />
                 <button type="submit" name="Submit">Login</button>
             </form>
+            <button onClick={() => setShowForm(value => !value)}>Create New User</button>
             <br/>
-            <NewUserForm />
         </Header>
     )
 }
