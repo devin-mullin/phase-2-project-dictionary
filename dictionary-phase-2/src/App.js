@@ -8,9 +8,11 @@ import { generateSlug } from "random-word-slugs";
 import NewUserForm from './Components/NewUserForm';
 import WordCard from './Components/WordCard';
 import ThesaurusCard from './Components/ThesaurusCard';
+import { Route, Switch } from 'react-router-dom'
+
 
 function App() {
-  const [showForm, setShowForm] = useState(false)
+  // const [showForm, setShowForm] = useState(false)
   const [searchWord, setSearchWord] = useState('')
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
@@ -53,14 +55,20 @@ function App() {
   return (
     <div>
       <h1>React-ionary</h1>
-      <NavBar setShowForm={setShowForm} />
-      {showForm ? <NewUserForm /> : null}
-      <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
-      {searchWord? <WordCard searchWord={searchWord[0]}/> : null}
-      {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
-      
-      <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
-      <FavoriteList />
+        <Switch>
+          <Route path="/newuser">
+            <NewUserForm />
+          </Route>
+          <Route path="/">
+            <NavBar />
+            <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
+            {searchWord? <WordCard searchWord={searchWord[0]}/> : null}
+            {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
+            
+            <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
+            <FavoriteList />
+          </Route>
+        </Switch>
     </div>
   );
 }

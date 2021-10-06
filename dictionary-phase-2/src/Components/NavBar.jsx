@@ -1,8 +1,9 @@
-import NewUserForm from './NewUserForm'
-import styled from 'styled-components'
-import {useState} from 'react'
 
-function NavBar({setShowForm}) {
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+
+
+function NavBar() {
 
     return(
         <Header>
@@ -11,7 +12,7 @@ function NavBar({setShowForm}) {
                 <input type="text" name="password" placeholder="Password" />
                 <button type="submit" name="Submit">Login</button>
             </form>
-            <button onClick={() => setShowForm(value => !value)}>Create New User</button>
+            <NavLink to="/newuser">Create New User</NavLink>
             <br/>
         </Header>
     )
