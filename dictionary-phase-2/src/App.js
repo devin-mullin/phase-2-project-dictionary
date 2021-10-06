@@ -14,6 +14,7 @@ import { Route, Switch } from 'react-router-dom'
 function App() {
   // const [showForm, setShowForm] = useState(false)
   const [searchWord, setSearchWord] = useState('')
+  const [userLogic, setUserLogin] = useState('')
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
   [
@@ -52,18 +53,18 @@ function App() {
   }
 
   function userLogin(e, creds) {
-    console.log(creds);
     e.preventDefault()
     fetch('http://localhost:3001/users')
     .then(r=>r.json())
     .then(users => {
-      const userLogic = 
-      users.map(user =>{creds.username && creds.password === user.username && user.password
-  
-        // alert(`good job, ${creds.username}, you logged in dude`)
-        console.log(userLogic)
-      }) 
-    })}
+      if(users.includes(creds.username && creds.password)){
+        setUserLogin(true)
+      } else {
+        setUserLogin(false)
+      }
+    }) 
+    // alert(`good job, ${creds.username}, you logged in dude`)
+  }
   
   
 

@@ -15,5 +15,22 @@
       "password": "devin",
       "id": 3
     }
+  ],
+  "Favorites": [
+    {
+      "id": 1,
+      "username": "scott@me.com",
+      "password": "hello world"
+    },
+    {
+      "id": 2,
+      "username": "devin@me.com",
+      "password": "hello world 1"
+    },
+    {
+      "username": "devin2",
+      "password": "devin",
+      "id": 3
+    }
   ]
 }
