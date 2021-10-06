@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 
 function NewUserForm({addUser}) {
     const [credentials, setCredentials] =useState({
@@ -8,6 +8,13 @@ function NewUserForm({addUser}) {
         password: ''
     })
     
+    const history = useHistory()
+
+    const routeChange = () => {
+        let path = './'
+        history.push(path)
+    }
+
     function handleChange(e) {
         setCredentials({
             ...credentials, 
@@ -24,7 +31,7 @@ function NewUserForm({addUser}) {
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} onClick={routeChange}>
                 <label>Username: </label>
                 <input type="text" name="username" onChange={handleChange} value={credentials.username} />
                 <br/>
