@@ -1,6 +1,6 @@
 import { getWordsByCategory } from "random-word-slugs/dist/words";
 import { useState } from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
 
 function Search ({getWordDefinition, getWordSynonym}) {
     const [searchValue, setSearchValue] = useState("") 
