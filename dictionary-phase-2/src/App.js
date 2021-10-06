@@ -33,19 +33,24 @@ function App() {
     })
   }, [])
   
-  function getWord(searchValue) {
+  function getWordDefinition(searchValue) {
     fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${searchValue}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
     .then(r => r.json())
     .then(data => setSearchWord(data))
   }
 
-  console.log(searchWord)
+  function getWordSynonym(searchValue) {
+    console.log('Synonym Value', "Test")
+    fetch(`https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${searchValue}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
+    .then(r => r.json())
+    .then(data => console.log("thesaurus", data))
+  }
 
   return (
     <div>
       <h1>React-ionary</h1>
       <NavBar />
-      <Search getWord={getWord} /> 
+      <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} /> 
       {searchWord? <WordContainer searchWord={searchWord}/> : null}
       <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
       <FavoriteList />
