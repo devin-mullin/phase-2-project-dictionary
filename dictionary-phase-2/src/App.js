@@ -15,6 +15,7 @@ function App() {
   // const [showForm, setShowForm] = useState(false)
   const [searchWord, setSearchWord] = useState('')
   const [userLogic, setUserLogin] = useState('')
+  const [likedWord, setLikedWord] = useState('')
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
   [
@@ -54,17 +55,19 @@ function App() {
 
   function userLogin(e, creds) {
     e.preventDefault()
-    fetch('http://localhost:3001/users')
+    fetch(`http://localhost:3001/users?username=${creds.username}`)
     .then(r=>r.json())
     .then(users => {
-      if(users.includes(creds.username && creds.password)){
-        setUserLogin(true)
+      if(users.length > 0){
+        setUserLogin(users) 
+        alert('good job brother u logged in')
       } else {
-        setUserLogin(false)
+        alert('try again buddy')
       }
     }) 
     // alert(`good job, ${creds.username}, you logged in dude`)
   }
+  
   
   
 

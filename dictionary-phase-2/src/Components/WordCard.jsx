@@ -1,5 +1,7 @@
+import { useState } from "react"
 
 function WordCard({searchWord}) {
+    const [isLiked, setIsLiked] = useState(false)
 
    const subdirectory = searchWord.hwi.prs[0].sound.audio[0]
    const soundFile = searchWord.hwi.prs[0].sound.audio 
@@ -26,7 +28,7 @@ function WordCard({searchWord}) {
 
 
         <div>
-            <h2>{searchWord.hwi.hw}</h2>
+            <h2>{searchWord.hwi.hw} <button onClick={()=>setIsLiked(!isLiked)}>{isLiked ? '❤️' : '🤍' }</button></h2>
             <h3>{searchWord.hwi.prs[0].mw}</h3>
             <button onClick={playAudio}>Say Word</button>
             {searchWord.shortdef.map((word, index) => <p key={index}>{word}</p>)}
