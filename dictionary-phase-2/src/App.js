@@ -57,8 +57,8 @@ function App() {
     fetch('http://localhost:3001/users')
     .then(r=>r.json())
     .then(users => {
-      const userLogic = users.map(user =>{
-        creds.username && creds.password === user.username && user.password
+      const userLogic = 
+      users.map(user =>{creds.username && creds.password === user.username && user.password
   
         // alert(`good job, ${creds.username}, you logged in dude`)
         console.log(userLogic)
