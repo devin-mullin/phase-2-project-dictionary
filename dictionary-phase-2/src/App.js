@@ -38,7 +38,6 @@ function App() {
   }, [])
   
   function getWordDefinition(searchValue) {
-    setSearchWord(previousValue=>previousValue='')
     fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${searchValue}?key=818a2b96-1647-4667-8769-8f3de5ad1509`)
     .then(r => r.json())
     .then(data => setSearchWord(data))
@@ -56,7 +55,7 @@ function App() {
       <h1>React-ionary</h1>
       <NavBar setShowForm={setShowForm} />
       {showForm ? <NewUserForm /> : null}
-      <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} /> 
+      <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
       {searchWord? <WordCard searchWord={searchWord[0]}/> : null}
       {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
       

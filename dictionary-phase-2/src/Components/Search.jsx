@@ -2,7 +2,7 @@ import { getWordsByCategory } from "random-word-slugs/dist/words";
 import { useState } from "react";
 import styled from "styled-components";
 
-function Search ({getWordDefinition, getWordSynonym}) {
+function Search ({getWordDefinition, getWordSynonym, setSearchWord, setThesaurusSearchWord}) {
     const [searchValue, setSearchValue] = useState("") 
     const [searchSwitcher, setSearchSwitcher] = useState(true)
     
@@ -13,6 +13,8 @@ function Search ({getWordDefinition, getWordSynonym}) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        setSearchWord(value => value = '')
+        setThesaurusSearchWord(value => value = '')
         searchSwitcher ? getWordDefinition(searchValue) : getWordSynonym(searchValue)
     }
 
