@@ -13,7 +13,6 @@ import { Route, Switch } from 'react-router-dom'
 
 function App() {
   // const [showForm, setShowForm] = useState(false)
-  const [userObj, setUserObj] = useState([])
   const [searchWord, setSearchWord] = useState('')
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
@@ -47,26 +46,28 @@ function App() {
   }
 
   function getWordSynonym(searchValue) {
-    console.log('Synonym Value', "Test")
     fetch(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${searchValue}?key=bf67571a-955e-4874-aa11-d4d40d976166`)
     .then(r => r.json())
     .then(data => setThesaurusSearchWord(data))
   }
 
-  function addUser(username){
-    fetch('http://localhost:3001/Users', {
-        method: "POST",
-        header: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(username)
-    })
-    .then(r => r.json())
-    .then(newUser => {
-      setUserObj([
-        ...userObj, newUser
-      ])
+  function userLogin(e, creds) {
+    console.log(creds);
+    e.preventDefault()
+    fetch('http://localhost:3001/users')
+    .then(r=>r.json())
+    .then(users => {
+      const userLogic = users.map(user =>{
+        creds.username && creds.password === user.username && user.password
+  
+        // alert(`good job, ${creds.username}, you logged in dude`)
+        console.log(userLogic)
+      }) 
     })}
+  
+  
+
+  
     
 
   return (
@@ -74,10 +75,10 @@ function App() {
       <h1>React-ionary</h1>
       <Switch>
           <Route path="/newuser">
-            <NewUserForm addUser={addUser} />
+            <NewUserForm />
           </Route>
           <Route path="/">
-            <NavBar />
+            <NavBar userLogin={userLogin}/>
             <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
             {searchWord? <WordCard searchWord={searchWord[0]}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
