@@ -13,6 +13,7 @@ import { Route, Switch } from 'react-router-dom'
 
 function App() {
   // const [showForm, setShowForm] = useState(false)
+  const [userObj, setUserObj] = useState([])
   const [searchWord, setSearchWord] = useState('')
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
@@ -52,19 +53,35 @@ function App() {
     .then(data => setThesaurusSearchWord(data))
   }
 
+  function addUser(username){
+    fetch('http://localhost:3001/Users', {
+        method: "POST",
+        header: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(username)
+    })
+    .then(r => r.json())
+    .then(newUser => {
+      setUserObj([
+        ...userObj, newUser
+      ])
+    })}
+    
+
   return (
     <div>
       <h1>React-ionary</h1>
-        <Switch>
+      <Switch>
           <Route path="/newuser">
-            <NewUserForm />
+            <NewUserForm addUser={addUser} />
           </Route>
           <Route path="/">
             <NavBar />
             <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
             {searchWord? <WordCard searchWord={searchWord[0]}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
-            
+
             <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
             <FavoriteList />
           </Route>
