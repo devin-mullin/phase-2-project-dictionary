@@ -1,28 +1,35 @@
 import { useEffect, useState } from "react"
 import Card from "../styled/card"
 
-function FavoriteList() {
-    const [favorites, setFavorites] = useState([])
-        
+function FavoriteList({favList, grabFavorites, isLoggedIn}) {
+    
+    
+    useEffect(()=>{
+        if(isLoggedIn === true){ 
+        grabFavorites()} 
+    }, [isLoggedIn]) 
+    
+    
 
-   useEffect(()=>{
-        fetch('http://localhost:3001/words')
-        .then(res=>res.json())
-        .then(favs => setFavorites(favs))
-   }, [])
-  
+
+    let listOfFavorites = 
+    favList.map(fav=>
+    <p key={fav.id}>
+    {fav.name}
+    <br />
+    </p>)
+        
+    if (isLoggedIn === false){
+        listOfFavorites = [null]
+    }
+
     
     return(
         <Card>
             <h1>Favorite List</h1>
-            <ul>
-                {favorites.map(fav=>
-                <li key={fav.id}>
-                {fav.name}
-                <br/>
-                pronunciation: {fav.pronunciation}
-                </li> )}
-            </ul>
+            
+              {listOfFavorites}
+            
         </Card>
     )
 }

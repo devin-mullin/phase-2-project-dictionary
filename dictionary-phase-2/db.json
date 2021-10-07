@@ -26,15 +26,218 @@
       "name": "ge*ri*at*ric",
       "pronunciation": "ˌjer-ē-ˈa-trik",
       "id": 3
+    },
+    {
+      "name": "ti*ger",
+      "pronunciation": "ˈtī-gər",
+      "id": 4
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 5
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 6
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 7
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 8
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 9
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 10
+    },
+    {
+      "name": "li*on",
+      "pronunciation": "ˈlī-ən",
+      "id": 11
+    },
+    {
+      "name": "dog",
+      "pronunciation": "ˈdȯg",
+      "id": 12
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
+      "id": 13
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
+      "id": 14
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
+      "id": 15
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
+      "id": 16
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
+      "id": 17
+    },
+    {
+      "name": "gui*tar",
+      "pronunciation": "gə-ˈtär",
+      "id": 18
+    },
+    {
+      "name": "gui*tar",
+      "pronunciation": "gə-ˈtär",
+      "id": 19
+    },
+    {
+      "name": "gui*tar",
+      "pronunciation": "gə-ˈtär",
+      "id": 20
+    },
+    {
+      "name": "gui*tar",
+      "pronunciation": "gə-ˈtär",
+      "id": 21
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 22
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 23
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 24
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 25
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 26
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 27
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 28
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 29
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 30
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 31
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 32
+    },
+    {
+      "name": "eye",
+      "pronunciation": "ˈī",
+      "id": 33
+    },
+    {
+      "name": "ge*ri*at*ric",
+      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "id": 34
+    },
+    {
+      "name": "ge*ri*at*ric",
+      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "id": 35
+    },
+    {
+      "name": "ge*ri*at*ric",
+      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "id": 36
+    },
+    {
+      "name": "ge*ri*at*ric",
+      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "id": 37
+    },
+    {
+      "name": "ge*ri*at*ric",
+      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "id": 38
+    },
+    {
+      "name": "ge*ri*at*ric",
+      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "id": 39
+    },
+    {
+      "name": "bas*ket*ball",
+      "pronunciation": "ˈba-skit-ˌbȯl",
+      "id": 40
+    },
+    {
+      "name": "bas*ket*ball",
+      "pronunciation": "ˈba-skit-ˌbȯl",
+      "id": 41
+    },
+    {
+      "name": "art*ist",
+      "pronunciation": "ˈär-tist",
+      "id": 42
     }
   ],
   "Favorites": [
-   {   
-    "id": 1,
-    "userId": "3",
-    "wordId": "3"
-   } 
-
+    {
+      "id": 1,
+      "userId": "3",
+      "wordId": "3"
+    },
+    {
+      "user": 3,
+      "favorite": 10,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "wordId": 42,
+      "id": 3
+    }
   ]
-  
 }

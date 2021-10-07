@@ -17,7 +17,7 @@ function App() {
   const [searchWord, setSearchWord] = useState('')
   const [loggedInUser, setLoggedInUser] = useState([{}])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [likedWord, setLikedWord] = useState('')
+  const [favList, setFavList] = useState([{}])
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
   [
@@ -32,11 +32,8 @@ function App() {
       shortdef: [] },
   ])
 
-  // userFavObj ={
-  //   user: loggedInUser.id,
-  //   favorite: likedWord 
-  // }
-
+  console.log(loggedInUser)
+  
   const slug = generateSlug(1)
 
   useEffect(() => {
@@ -77,22 +74,53 @@ function App() {
   }
   
   const addFavorite = (word) => { 
-    setLikedWord(word)
     fetch('http://localhost:3001/words', {
       method: 'POST', 
       headers: {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(likedWord)
+      body: JSON.stringify(word)
       }
     )
     .then(res=>res.json())
-    .then(word=>console.log('word id', word))
-    .catch(console.log('error'))
+    .then(word=>linkedFavorites(word))
   }
   
+  const linkedFavorites = (word) => {
+    const userFavObj ={
+      userId: loggedInUser[0].id,
+      wordId: word.id
+        }
+      fetch('http://localhost:3001/favorites', {
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify(userFavObj)
+      })
+      .then(res=>res.json())
+      .then(userFav => grabFavorites())
+      
+  }
 
+  const grabFavorites = () => {
+    fetch(`http://localhost:3001/user/${loggedInUser[0].id}/favorites?_expand=words`)
+    .then(res=>res.json())
+    .then(data => {
+    data.map(objs=>{ 
+      fetch(`http://localhost:3001/words/${objs.wordId}`)
+      .then(res=>res.json())
+      .then(data=> setFavList(value=>[...value, data]))
+      
+      
+    
+    })})
+    
+  }
+
+
+  
   
   return (
     <div>
@@ -106,7 +134,7 @@ function App() {
             {searchWord? <WordCard searchWord={searchWord[0]} addFavorite={addFavorite}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
             <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
-            <FavoriteList />
+            <FavoriteList favList={favList} grabFavorites={grabFavorites} isLoggedIn={isLoggedIn}/>
           </Route>
         </Switch>
     </div>
