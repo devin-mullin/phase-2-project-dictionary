@@ -68,7 +68,22 @@ function App() {
     // alert(`good job, ${creds.username}, you logged in dude`)
   }
   
-  
+  const addFavorite = (word) => {
+    console.log(word);
+    setLikedWord(word)
+    console.log(likedWord)
+    fetch('http://localhost:3001/favorites', {
+      method: 'POST', 
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(likedWord)
+      }
+    )
+    .then(res=>res.json())
+    .catch(console.log('error'))
+  }
   
 
   
@@ -84,7 +99,7 @@ function App() {
           <Route path="/">
             <NavBar userLogin={userLogin}/>
             <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
-            {searchWord? <WordCard searchWord={searchWord[0]}/> : null}
+            {searchWord? <WordCard searchWord={searchWord[0]} addFavorite={addFavorite}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
 
             <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
