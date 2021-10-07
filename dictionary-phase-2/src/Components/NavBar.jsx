@@ -28,7 +28,7 @@ function NavBar({userLogin, loggedInUser, setIsLoggedIn, isLoggedIn}) {
     const loggedIn = 
         <Div>
             <h3>Hello {loggedInUser[0].username}</h3>
-            <button onClick={()=>setIsLoggedIn(!isLoggedIn)}>Log Out</button>
+            <button onClick={() => setIsLoggedIn(value => false)}>Log Out</button>
         </Div>
 
     return(
@@ -36,6 +36,7 @@ function NavBar({userLogin, loggedInUser, setIsLoggedIn, isLoggedIn}) {
             <h1>React-ionary</h1>
             {isLoggedIn ? loggedIn : loginForm}
             <NavLink to="/newuser">Create New User</NavLink>
+            <NavLink to="/randomword">Random Word</NavLink>
             <br/>
         </Header>
     )

@@ -15,11 +15,11 @@ function FavoriteList({favList, grabFavorites, isLoggedIn}) {
     let listOfFavorites = 
     favList.map(fav=>
     <p key={fav.id}>
-    {fav.name}
-    <br />
+        {fav.name}
     </p>)
         
-    if (isLoggedIn === false){
+    
+        if (isLoggedIn === false){
         listOfFavorites = [null]
     }
 

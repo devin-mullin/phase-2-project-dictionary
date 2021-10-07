@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Card from "../styled/card"
 
-function WordCard({searchWord, addFavorite}) {
+function WordCard({searchWord, addFavorite, isLoggedIn}) {
     const [isLiked, setIsLiked] = useState(true)
     const [likedWord, setLikedWord] = useState('')
 
@@ -14,8 +14,6 @@ function WordCard({searchWord, addFavorite}) {
 
    const searchWordOrg = searchWord.hwi.hw
    const searchWordName = searchWordOrg.replace('*', '')
-
-    console.log(searchWordName);
 
    if(searchWord.art?.artid) {
     isImage = true
@@ -30,7 +28,11 @@ function WordCard({searchWord, addFavorite}) {
                     }
 
    const handleLike = () => {
-       setIsLiked(!isLiked)
+       if(isLoggedIn === false) {
+           alert("Please Log In")
+        } else {
+            setIsLiked(!isLiked)
+        }
        
        if (isLiked === true){
            addFavorite(likedObj)

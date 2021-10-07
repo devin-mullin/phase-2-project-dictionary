@@ -16,247 +16,233 @@
       "id": 3
     },
     {
-      "username": "Scott2",
-      "password": "aaaa",
+      "username": "devin3",
+      "password": "",
       "id": 4
+    },
+    {
+      "username": "scottdonnan",
+      "password": "",
+      "id": 5
     }
   ],
   "Words": [
     {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
+      "name": "static",
+      "pronunciation": "ˈsta-tik",
+      "id": 1
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
+      "id": 2
+    },
+    {
+      "name": "tree",
+      "pronunciation": "ˈtrē",
       "id": 3
     },
     {
-      "name": "ti*ger",
-      "pronunciation": "ˈtī-gər",
+      "name": "tree",
+      "pronunciation": "ˈtrē",
       "id": 4
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "mad",
+      "pronunciation": "ˈmad",
       "id": 5
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 6
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 7
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 8
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 9
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 10
     },
     {
-      "name": "li*on",
-      "pronunciation": "ˈlī-ən",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 11
     },
     {
-      "name": "dog",
-      "pronunciation": "ˈdȯg",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 12
     },
     {
-      "name": "tree",
-      "pronunciation": "ˈtrē",
+      "name": "funny",
+      "pronunciation": "ˈfə-nē",
       "id": 13
     },
     {
-      "name": "tree",
-      "pronunciation": "ˈtrē",
+      "name": "tiger",
+      "pronunciation": "ˈtī-gər",
       "id": 14
     },
     {
-      "name": "tree",
-      "pronunciation": "ˈtrē",
+      "name": "tiger",
+      "pronunciation": "ˈtī-gər",
       "id": 15
     },
     {
-      "name": "tree",
-      "pronunciation": "ˈtrē",
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
       "id": 16
     },
     {
-      "name": "tree",
-      "pronunciation": "ˈtrē",
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
       "id": 17
     },
     {
-      "name": "gui*tar",
-      "pronunciation": "gə-ˈtär",
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
       "id": 18
     },
     {
-      "name": "gui*tar",
-      "pronunciation": "gə-ˈtär",
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
       "id": 19
     },
     {
-      "name": "gui*tar",
-      "pronunciation": "gə-ˈtär",
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
       "id": 20
     },
     {
-      "name": "gui*tar",
-      "pronunciation": "gə-ˈtär",
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
       "id": 21
     },
     {
-      "name": "eye",
-      "pronunciation": "ˈī",
+      "name": "fart",
+      "pronunciation": "ˈfärt",
       "id": 22
     },
     {
-      "name": "eye",
-      "pronunciation": "ˈī",
+      "name": "fart",
+      "pronunciation": "ˈfärt",
       "id": 23
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 24
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 25
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 26
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 27
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 28
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 29
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 30
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 31
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 32
-    },
-    {
-      "name": "eye",
-      "pronunciation": "ˈī",
-      "id": 33
-    },
-    {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
-      "id": 34
-    },
-    {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
-      "id": 35
-    },
-    {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
-      "id": 36
-    },
-    {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
-      "id": 37
-    },
-    {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
-      "id": 38
-    },
-    {
-      "name": "ge*ri*at*ric",
-      "pronunciation": "ˌjer-ē-ˈa-trik",
-      "id": 39
-    },
-    {
-      "name": "bas*ket*ball",
-      "pronunciation": "ˈba-skit-ˌbȯl",
-      "id": 40
-    },
-    {
-      "name": "bas*ket*ball",
-      "pronunciation": "ˈba-skit-ˌbȯl",
-      "id": 41
-    },
-    {
-      "name": "art*ist",
-      "pronunciation": "ˈär-tist",
-      "id": 42
-    },
-    {
-      "name": "tiger",
-      "pronunciation": "ˈtī-gər",
-      "id": 43
-    },
-    {
-      "name": "tiger",
-      "pronunciation": "ˈtī-gər",
-      "id": 44
     }
   ],
   "Favorites": [
     {
-      "id": 1,
-      "userId": "3",
-      "wordId": "3"
+      "userId": 4,
+      "wordId": 1,
+      "id": 1
     },
     {
-      "user": 3,
-      "favorite": 10,
+      "userId": 4,
+      "wordId": 2,
       "id": 2
     },
     {
-      "userId": 1,
-      "wordId": 42,
+      "userId": 5,
+      "wordId": 3,
       "id": 3
     },
     {
-      "wordId": 43,
+      "userId": 5,
+      "wordId": 4,
       "id": 4
     },
     {
-      "userId": 3,
-      "wordId": 44,
+      "userId": 5,
+      "wordId": 5,
       "id": 5
+    },
+    {
+      "wordId": 6,
+      "id": 6
+    },
+    {
+      "wordId": 7,
+      "id": 7
+    },
+    {
+      "wordId": 8,
+      "id": 8
+    },
+    {
+      "wordId": 9,
+      "id": 9
+    },
+    {
+      "wordId": 10,
+      "id": 10
+    },
+    {
+      "wordId": 11,
+      "id": 11
+    },
+    {
+      "wordId": 12,
+      "id": 12
+    },
+    {
+      "wordId": 13,
+      "id": 13
+    },
+    {
+      "wordId": 14,
+      "id": 14
+    },
+    {
+      "wordId": 15,
+      "id": 15
+    },
+    {
+      "wordId": 16,
+      "id": 16
+    },
+    {
+      "wordId": 17,
+      "id": 17
+    },
+    {
+      "wordId": 18,
+      "id": 18
+    },
+    {
+      "userId": 3,
+      "wordId": 19,
+      "id": 19
+    },
+    {
+      "userId": 3,
+      "wordId": 20,
+      "id": 20
+    },
+    {
+      "userId": 3,
+      "wordId": 21,
+      "id": 21
+    },
+    {
+      "wordId": 22,
+      "id": 22
+    },
+    {
+      "wordId": 23,
+      "id": 23
     }
   ]
 }
