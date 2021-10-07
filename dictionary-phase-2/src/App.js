@@ -9,12 +9,14 @@ import NewUserForm from './Components/NewUserForm';
 import WordCard from './Components/WordCard';
 import ThesaurusCard from './Components/ThesaurusCard';
 import { Route, Switch } from 'react-router-dom'
+import styled from 'styled-components';
 
 
 function App() {
   // const [showForm, setShowForm] = useState(false)
   const [searchWord, setSearchWord] = useState('')
-  const [userLogic, setUserLogin] = useState('')
+  const [loggedInUser, setLoggedInUser] = useState([{}])
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [likedWord, setLikedWord] = useState('')
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
   const [randomWord, setRandomWord] = useState(
@@ -59,7 +61,8 @@ function App() {
     .then(r=>r.json())
     .then(users => {
       if(users.length > 0){
-        setUserLogin(users) 
+        setLoggedInUser(users)
+        setIsLoggedIn(true) 
         alert('good job brother u logged in')
       } else {
         alert('try again buddy')
@@ -87,22 +90,22 @@ function App() {
   
 
   
-    
-
   return (
     <div>
-      <h1>React-ionary</h1>
       <Switch>
           <Route path="/newuser">
             <NewUserForm />
           </Route>
           <Route path="/">
-            <NavBar userLogin={userLogin}/>
-            <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
+            <NavBar userLogin={userLogin} loggedInUser={loggedInUser} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>
+            <PageStyle>
+              <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
+            </PageStyle>
             {searchWord? <WordCard searchWord={searchWord[0]} addFavorite={addFavorite}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
-
-            <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
+            <PageStyle>
+              <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
+            </PageStyle>
             <FavoriteList />
           </Route>
         </Switch>
@@ -111,3 +114,15 @@ function App() {
 }
 
 export default App;
+
+const PageStyle = styled.div `
+  display: flex;
+  justify-content: center;
+  background-color: #49b867;
+  padding: 20px;
+  
+  margin: 80px 100px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5), 0 0 40px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+`
+

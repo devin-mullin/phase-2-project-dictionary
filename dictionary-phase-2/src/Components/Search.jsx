@@ -23,20 +23,23 @@ function Search ({getWordDefinition, getWordSynonym, setSearchWord, setThesaurus
     
     
     return(
-        <>
-            <form onSubmit={handleSubmit}>
+        <div>
+            <Form onSubmit={handleSubmit}>
                 <SearchBar type="text" name="search" value={searchValue} onChange={handleChange} />
                 <button type="submit" value="Submit">Search</button>        
-            </form>
+            </Form>
             {searchSwitcher ? <Button onClick={setSwitchTrue}>Dictionary</Button> : <button onClick={setSwitchTrue}>Dictionary</button>}
             {searchSwitcher ? <button onClick={setSwitchFalse}>Thesaurus</button> : <Button onClick={setSwitchTrue}>Thesaurus</Button>}
 
-        </>
+        </div>
     )
 }
 
 export default Search
 
+const Form = styled.form `
+    display: flex;
+`
 const Button = styled.button `
     background-color: blue;
     padding: 5px 10px;
