@@ -19,16 +19,16 @@ function NavBar({userLogin, loggedInUser, setIsLoggedIn, isLoggedIn}) {
     }
 
     const loginForm = 
-        <form onSubmit={(e)=>userLogin(e, credentials)}>
+        <Form onSubmit={(e)=>userLogin(e, credentials)}>
             <input type="text" name="username" placeholder="Name" value={credentials.username} onChange={handleChange} />
             <input type="text" name="password" placeholder="Password" value={credentials.password} onChange={handleChange}/>
-            <button type="submit" name="Submit">Login</button>
-        </form>   
+            <Button type="submit" name="Submit">Login</Button>
+        </Form>   
     
     const loggedIn = 
         <Div>
             <h3>Hello {loggedInUser[0].username}</h3>
-            <button onClick={() => setIsLoggedIn(value => false)}>Log Out</button>
+            <Button onClick={() => setIsLoggedIn(value => false)}>Log Out</Button>
         </Div>
 
     return(
@@ -46,34 +46,71 @@ export default NavBar
 
 const Header = styled.div `
     display: flex;
+    font-family: Helvetica, sans-serif;
     justify-content: space-evenly;
     align-items: center;
+    font-family: Helvetica, sans-serif;
+    border-radius: 15px;
     margin: 10px 0;
     padding: 10px;
-    background-color: #49b867;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5), 0 0 40px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff;
     & h1 {
         margin: 0;
     }
     & input {
+        font-family: Helvetica, sans-serif;
         height: 30px;
+        border-radius: 15px;
     }
     & a {
-        background-color: #49b867;
+        background-color: ##5CD64C;
         color: black;
-        padding 10px;
+        padding: 10px;
         border-radius: 10px;
         text-decoration: none;
 
     }
     & a:hover {
         color: white;
-        background-color: black;
+        background-color: #3165a5;
     }
 `
 
 const Div = styled.div `
     display: flex;
+    font-family: Helvetica, sans-serif;
     & h3 {
         margin: 0 5px;
+    }
+`
+const Button = styled.button `
+border-radius: 15px;
+padding: 5px 10px;
+font-family: Helvetica, sans-serif;
+
+`
+const Form = styled.form `
+font-family: Helvetica, sans-serif;
+;
+
+& input {
+    font-family: Helvetica, sans-serif;
+    margin: 10px
+}
+
+& button {
+        background-color: ##5CD64C;
+        font-family: Helvetica
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+
+    }
+
+& button:hover {
+        color: white;
+        background-color: #3165a5;
     }
 `

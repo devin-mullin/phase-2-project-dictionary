@@ -2,6 +2,7 @@
 import Card from "../styled/card"
 import {useEffect, useState} from 'react'
 import { generateSlug } from "random-word-slugs"
+import styled from "styled-components"
 
 function WordOfTheDay() {
     const [randomWord, setRandomWord] = useState(
@@ -33,6 +34,9 @@ function WordOfTheDay() {
     let isImage = true
     let image
 
+    const randomWordOrg = randomWord[0].hwi.hw
+    const randomWordName = randomWordOrg.replace('*', '')
+
     if(randomWord[0].art?.artid) {
      isImage = true
      const imageDirectory = randomWord[0].art.artid 
@@ -50,9 +54,9 @@ function WordOfTheDay() {
      return(
          <Card>
              <h1>Your Random Word!</h1>
-             <h2>{randomWord[0].hwi.hw}</h2>
+             <h2>{randomWordName}</h2>
              <h3>{randomWord[0].hwi.prs[0].mw}</h3>
-             <button onClick={playAudio}>Say Word</button>
+             <PlayButton onClick={playAudio}>Say Word</PlayButton>
              {randomWord[0].shortdef.map((word, index) => <p key={index}>{word}</p>)}
              {isImage ? <img src={image}/> : null}
          </Card>
@@ -60,3 +64,25 @@ function WordOfTheDay() {
 }
 
 export default WordOfTheDay
+
+const PlayButton = styled.button`
+    background-image: linear-gradient(to right, #2BC0E4 0%, #EAECC6  51%, #2BC0E4  100%)}  
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Helvetica; sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: center;
+          }
+
+          &:hover {
+            background-position: right center; 
+            color: #fff;
+            text-decoration: none;
+          
+         
+`

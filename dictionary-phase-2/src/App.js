@@ -106,7 +106,7 @@ function App() {
             <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
             {searchWord? <WordCard searchWord={searchWord[0]} addFavorite={addFavorite} isLoggedIn={isLoggedIn}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
-            <FavoriteList favList={favList} grabFavorites={grabFavorites} isLoggedIn={isLoggedIn}/>
+            <FavoriteList favList={favList} grabFavorites={grabFavorites} isLoggedIn={isLoggedIn} loggedInUser={loggedInUser[0]}/>
           </Route>
         </Switch>
     </div>

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import Card from "../styled/card"
 
-function FavoriteList({favList, grabFavorites, isLoggedIn}) {
+function FavoriteList({favList, grabFavorites, isLoggedIn, loggedInUser}) {
     
-    
+
     useEffect(()=>{
         if(isLoggedIn === true){ 
         grabFavorites()} 
@@ -26,7 +26,7 @@ function FavoriteList({favList, grabFavorites, isLoggedIn}) {
     
     return(
         <Card>
-            <h1>Favorite List</h1>
+            <h2>{isLoggedIn ? `${loggedInUser.username}'s Favorite Words` : 'Favorite Words'}</h2>
             
               {listOfFavorites}
             

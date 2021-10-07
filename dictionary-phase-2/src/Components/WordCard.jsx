@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Card from "../styled/card"
+import styled from "styled-components"
 
 function WordCard({searchWord, addFavorite, isLoggedIn}) {
     const [isLiked, setIsLiked] = useState(true)
@@ -52,9 +53,9 @@ function WordCard({searchWord, addFavorite, isLoggedIn}) {
 
     return(
         <Card>
-            <h2>{searchWordName} <button onClick={handleLike}>{isLiked ? '🤍' : '❤️' }</button></h2>
+            <h2>{searchWordName} <LikeButton onClick={handleLike}>{isLiked ? '🤍' : '❤️' }</LikeButton></h2>
             <h3>{searchWord.hwi.prs[0].mw}</h3>
-            <button onClick={playAudio}>Say Word</button>
+            <PlayButton onClick={playAudio}>Say Word</PlayButton>
             {searchWord.shortdef.map((word, index) => <p key={index}>{word}</p>)}
             {isImage ? <img src={image}/> : null}            
         </Card>
@@ -62,3 +63,43 @@ function WordCard({searchWord, addFavorite, isLoggedIn}) {
 }
 
 export default WordCard
+
+const PlayButton = styled.button`
+    background-image: linear-gradient(to right, #2BC0E4 0%, #EAECC6  51%, #2BC0E4  100%)}  
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Helvetica; sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: center;
+          }
+
+          &:hover {
+            background-position: right center; 
+            color: #fff;
+            text-decoration: none;       
+`
+
+const LikeButton = styled.button`
+    background-image: linear-gradient(to right, #2BC0E4 0%, #EAECC6  51%, #2BC0E4  100%)}  
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Helvetica; sans-serif;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: black;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: center;
+          }
+
+          &:hover {
+            background-position: right center; 
+            color: #fff;
+            text-decoration: none;       
+`
