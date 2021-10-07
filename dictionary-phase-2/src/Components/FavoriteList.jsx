@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Card from "../styled/card"
 
 function FavoriteList() {
     const [favorites, setFavorites] = useState([])
@@ -12,7 +13,7 @@ function FavoriteList() {
   
     
     return(
-        <div>
+        <Card>
             <h1>Favorite List</h1>
             <ul>
                 {favorites.map(fav=>
@@ -22,7 +23,7 @@ function FavoriteList() {
                 pronunciation: {fav.pronunciation}
                 </li> )}
             </ul>
-        </div>
+        </Card>
     )
 }
 

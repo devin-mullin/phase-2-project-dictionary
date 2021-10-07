@@ -98,14 +98,10 @@ function App() {
           </Route>
           <Route path="/">
             <NavBar userLogin={userLogin} loggedInUser={loggedInUser} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>
-            <PageStyle>
-              <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
-            </PageStyle>
+            <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
             {searchWord? <WordCard searchWord={searchWord[0]} addFavorite={addFavorite}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
-            <PageStyle>
-              <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
-            </PageStyle>
+            <WordOfTheDay randomWord={randomWord[0]} setRandomWord={setRandomWord} />
             <FavoriteList />
           </Route>
         </Switch>
@@ -114,15 +110,4 @@ function App() {
 }
 
 export default App;
-
-const PageStyle = styled.div `
-  display: flex;
-  justify-content: center;
-  background-color: #49b867;
-  padding: 20px;
-  
-  margin: 80px 100px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .5), 0 0 40px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-`
 

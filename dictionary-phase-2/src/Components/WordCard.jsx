@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Card from "../styled/card"
 
 function WordCard({searchWord, addFavorite}) {
     const [isLiked, setIsLiked] = useState(true)
@@ -44,16 +45,13 @@ function WordCard({searchWord, addFavorite}) {
   
 
     return(
-
-
-        <div>
+        <Card>
             <h2>{searchWord.hwi.hw} <button onClick={handleLike}>{isLiked ? '🤍' : '❤️' }</button></h2>
             <h3>{searchWord.hwi.prs[0].mw}</h3>
             <button onClick={playAudio}>Say Word</button>
             {searchWord.shortdef.map((word, index) => <p key={index}>{word}</p>)}
-            {isImage ? <img src={image}/> : null}
-            
-        </div>
+            {isImage ? <img src={image}/> : null}            
+        </Card>
     )
 }
 

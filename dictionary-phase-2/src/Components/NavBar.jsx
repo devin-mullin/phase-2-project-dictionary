@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import Card from '../styled/card'
 
 
 function NavBar({userLogin, loggedInUser, setIsLoggedIn, isLoggedIn}) {
@@ -22,7 +23,7 @@ function NavBar({userLogin, loggedInUser, setIsLoggedIn, isLoggedIn}) {
             <input type="text" name="username" placeholder="Name" value={credentials.username} onChange={handleChange} />
             <input type="text" name="password" placeholder="Password" value={credentials.password} onChange={handleChange}/>
             <button type="submit" name="Submit">Login</button>
-        </form>
+        </form>   
     
     const loggedIn = 
         <Div>
@@ -61,7 +62,7 @@ const Header = styled.div `
         padding 10px;
         border-radius: 10px;
         text-decoration: none;
-        
+
     }
     & a:hover {
         color: white;
