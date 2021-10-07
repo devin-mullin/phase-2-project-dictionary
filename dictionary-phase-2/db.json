@@ -221,6 +221,16 @@
       "name": "art*ist",
       "pronunciation": "ˈär-tist",
       "id": 42
+    },
+    {
+      "name": "tiger",
+      "pronunciation": "ˈtī-gər",
+      "id": 43
+    },
+    {
+      "name": "tiger",
+      "pronunciation": "ˈtī-gər",
+      "id": 44
     }
   ],
   "Favorites": [
@@ -238,6 +248,15 @@
       "userId": 1,
       "wordId": 42,
       "id": 3
+    },
+    {
+      "wordId": 43,
+      "id": 4
+    },
+    {
+      "userId": 3,
+      "wordId": 44,
+      "id": 5
     }
   ]
 }

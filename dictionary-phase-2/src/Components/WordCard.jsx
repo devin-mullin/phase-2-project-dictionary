@@ -12,6 +12,10 @@ function WordCard({searchWord, addFavorite}) {
    let isImage = true
    let image
 
+   const searchWordOrg = searchWord.hwi.hw
+   const searchWordName = searchWordOrg.replace('*', '')
+
+    console.log(searchWordName);
 
    if(searchWord.art?.artid) {
     isImage = true
@@ -21,7 +25,7 @@ function WordCard({searchWord, addFavorite}) {
        isImage = false
    }
     
-   const likedObj = { name: searchWord.hwi.hw,
+   const likedObj = { name: searchWordName,
                       pronunciation: searchWord.hwi.prs[0].mw
                     }
 
@@ -46,7 +50,7 @@ function WordCard({searchWord, addFavorite}) {
 
     return(
         <Card>
-            <h2>{searchWord.hwi.hw} <button onClick={handleLike}>{isLiked ? '🤍' : '❤️' }</button></h2>
+            <h2>{searchWordName} <button onClick={handleLike}>{isLiked ? '🤍' : '❤️' }</button></h2>
             <h3>{searchWord.hwi.prs[0].mw}</h3>
             <button onClick={playAudio}>Say Word</button>
             {searchWord.shortdef.map((word, index) => <p key={index}>{word}</p>)}
