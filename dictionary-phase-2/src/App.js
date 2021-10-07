@@ -32,6 +32,11 @@ function App() {
       shortdef: [] },
   ])
 
+  // userFavObj ={
+  //   user: loggedInUser.id,
+  //   favorite: likedWord 
+  // }
+
   const slug = generateSlug(1)
 
   useEffect(() => {
@@ -71,11 +76,9 @@ function App() {
     // alert(`good job, ${creds.username}, you logged in dude`)
   }
   
-  const addFavorite = (word) => {
-    console.log(word);
+  const addFavorite = (word) => { 
     setLikedWord(word)
-    console.log(likedWord)
-    fetch('http://localhost:3001/favorites', {
+    fetch('http://localhost:3001/words', {
       method: 'POST', 
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -85,6 +88,7 @@ function App() {
       }
     )
     .then(res=>res.json())
+    .then(word=>console.log('word id', word))
     .catch(console.log('error'))
   }
   

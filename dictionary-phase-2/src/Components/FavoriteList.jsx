@@ -6,7 +6,7 @@ function FavoriteList() {
         
 
    useEffect(()=>{
-        fetch('http://localhost:3001/favorites')
+        fetch('http://localhost:3001/words')
         .then(res=>res.json())
         .then(favs => setFavorites(favs))
    }, [])

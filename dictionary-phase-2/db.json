@@ -21,11 +21,20 @@
       "id": 4
     }
   ],
-  "Favorites": [
+  "Words": [
     {
       "name": "ge*ri*at*ric",
       "pronunciation": "ˌjer-ē-ˈa-trik",
       "id": 3
     }
+  ],
+  "Favorites": [
+   {   
+    "id": 1,
+    "userId": "3",
+    "wordId": "3"
+   } 
+
   ]
+  
 }
