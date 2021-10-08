@@ -22,6 +22,11 @@ border-radius: 15px;
     color: white;
     background-color: #3165a5;
 }
+
+& li {
+    margin: 5px;
+    padding: 5px;
+}
 `
 
 export default Card

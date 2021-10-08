@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { NavLink, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Card from '../styled/card'
 import styled from 'styled-components'
 

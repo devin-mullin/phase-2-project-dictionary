@@ -1,4 +1,3 @@
-import { getWordsByCategory } from "random-word-slugs/dist/words";
 import { useState } from "react";
 import styled from "styled-components";
 

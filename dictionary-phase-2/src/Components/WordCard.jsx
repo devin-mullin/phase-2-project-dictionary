@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 function WordCard({searchWord, addFavorite, isLoggedIn}) {
     const [isLiked, setIsLiked] = useState(true)
-    const [likedWord, setLikedWord] = useState('')
+    // const [likedWord, setLikedWord] = useState('')
 
    const subdirectory = searchWord.hwi.prs[0].sound.audio[0]
    const soundFile = searchWord.hwi.prs[0].sound.audio 
@@ -50,13 +50,17 @@ function WordCard({searchWord, addFavorite, isLoggedIn}) {
    }
 
   
-
+   let count = 1
     return(
         <Card>
             <h2>{searchWordName} <LikeButton onClick={handleLike}>{isLiked ? '🤍' : '❤️' }</LikeButton></h2>
             <h3>{searchWord.hwi.prs[0].mw}</h3>
             <PlayButton onClick={playAudio}>Say Word</PlayButton>
-            {searchWord.shortdef.map((word, index) => <p key={index}>{word}</p>)}
+            {searchWord.shortdef.map((word, index) => {
+                return <p key={index}>Definition {count}: {word}</p>
+                console.log('counter', count)
+                count = count + 1
+                })}
             {isImage ? <img src={image}/> : null}            
         </Card>
     )

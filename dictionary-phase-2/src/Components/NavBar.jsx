@@ -2,7 +2,6 @@
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
-import Card from '../styled/card'
 
 
 function NavBar({userLogin, loggedInUser, setIsLoggedIn, isLoggedIn}) {

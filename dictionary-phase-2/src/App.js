@@ -1,23 +1,22 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Search from './Components/Search';
 import WordOfTheDay from './Components/WordOfTheDay';
 import FavoriteList from './Components/FavoriteList';
 import NavBar from './Components/NavBar';
-import { generateSlug } from "random-word-slugs";
 import NewUserForm from './Components/NewUserForm';
 import WordCard from './Components/WordCard';
 import ThesaurusCard from './Components/ThesaurusCard';
 import { Route, Switch } from 'react-router-dom'
-import styled from 'styled-components';
 
 
 function App() {
   const [searchWord, setSearchWord] = useState('')
   const [loggedInUser, setLoggedInUser] = useState([{}])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [favList, setFavList] = useState([{}])
+  const [favList, setFavList] = useState([])
   const [thesaurusSearchWord, setThesaurusSearchWord] = useState("")
+  const [favoriteArray, setFavoriteArray] = useState([])
  
   
   function getWordDefinition(searchValue) {
@@ -81,15 +80,29 @@ function App() {
   }
 
   const grabFavorites = () => {
-    setFavList(value => value = [{}])
+    setFavList(value => value = [])
     fetch(`http://localhost:3001/user/${loggedInUser[0].id}/favorites?_expand=words`)
     .then(res=>res.json())
-    .then(data => {
-    data.map(objs=>{ 
+    .then(data => anotherFunction(data))
+  }
+      
+
+  const anotherFunction = (data) => {
+      data.forEach(objs=>{ 
       fetch(`http://localhost:3001/words/${objs.wordId}`)
       .then(res=>res.json())
-      .then(data=> setFavList(value=>[...value, data]))
-    })})
+      .then(data=> {
+        const favObj = {...data, favoriteID: objs.id}
+        setFavList(value=>[...value, favObj])})
+      })
+    }
+      
+
+  function handleDeleteFavorite(favID) {
+    fetch(`http://localhost:3001/favorites/${favID}`, {
+      method: 'DELETE'
+    })
+    .then(grabFavorites())
   }
   
   return (
@@ -106,7 +119,7 @@ function App() {
             <Search getWordDefinition={getWordDefinition} getWordSynonym={getWordSynonym} setSearchWord={setSearchWord} setThesaurusSearchWord={setThesaurusSearchWord}/> 
             {searchWord? <WordCard searchWord={searchWord[0]} addFavorite={addFavorite} isLoggedIn={isLoggedIn}/> : null}
             {thesaurusSearchWord? <ThesaurusCard thesaurusSearchWord={thesaurusSearchWord[0]} /> : null}
-            <FavoriteList favList={favList} grabFavorites={grabFavorites} isLoggedIn={isLoggedIn} loggedInUser={loggedInUser[0]}/>
+            <FavoriteList handleDeleteFavorite={handleDeleteFavorite} favList={favList} grabFavorites={grabFavorites} isLoggedIn={isLoggedIn} loggedInUser={loggedInUser[0]}/>
           </Route>
         </Switch>
     </div>
