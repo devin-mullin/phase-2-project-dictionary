@@ -1,6 +1,8 @@
 
 import { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
+import Card from '../styled/card'
+import styled from 'styled-components'
 
 function NewUserForm() {
     const [credentials, setCredentials] =useState({
@@ -47,8 +49,8 @@ function NewUserForm() {
 
 
     return(
-        <div>
-            <form onSubmit={handleSubmit}>
+        <Card>
+            <Form onSubmit={handleSubmit}>
                 <label>Username: </label>
                 <input type="text" name="username" onChange={handleChange} value={credentials.username} />
                 <br/>
@@ -56,9 +58,36 @@ function NewUserForm() {
                 <input type="text" name="password" onChange={handleChange} value={credentials.password} />
                 <br/>
                 <input type="submit" name="Submit" value="Create"/>
-            </form>
-        </div>
+            </Form>
+        </Card>
     )
 }
 
 export default NewUserForm
+
+const Form = styled.form `
+font-family: Helvetica, sans-serif;
+;
+
+& input {
+    font-family: Helvetica, sans-serif;
+    margin: 10px
+    height: 30px;
+    border-radius: 15px;
+}
+
+& button {
+        background-color: ##5CD64C;
+        font-family: Helvetica
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+
+    }
+
+& button:hover {
+        color: white;
+        background-color: #3165a5;
+    }
+`

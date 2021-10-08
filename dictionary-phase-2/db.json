@@ -34,6 +34,16 @@
       "username": "hell yeah",
       "password": "hell yeah",
       "id": 7
+    },
+    {
+      "username": "",
+      "password": "",
+      "id": 8
+    },
+    {
+      "username": "jennifer",
+      "password": "",
+      "id": 9
     }
   ],
   "Words": [
@@ -221,6 +231,21 @@
       "name": "tiger",
       "pronunciation": "ˈtī-gər",
       "id": 37
+    },
+    {
+      "name": "lunch",
+      "pronunciation": "ˈlənch",
+      "id": 38
+    },
+    {
+      "name": "lunch",
+      "pronunciation": "ˈlənch",
+      "id": 39
+    },
+    {
+      "name": "vanil*la",
+      "pronunciation": "və-ˈni-lə",
+      "id": 40
     }
   ],
   "Favorites": [
@@ -387,6 +412,21 @@
       "userId": 3,
       "wordId": 37,
       "id": 37
+    },
+    {
+      "userId": 3,
+      "wordId": 38,
+      "id": 38
+    },
+    {
+      "userId": 5,
+      "wordId": 39,
+      "id": 39
+    },
+    {
+      "userId": 9,
+      "wordId": 40,
+      "id": 40
     }
   ]
 }
